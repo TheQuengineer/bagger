@@ -1,0 +1,11 @@
+GroceryName,Temperature,Location,Target
+Ice Cream,1,6,0
+Popsicles,2,0,0
+Bologna,0,3,0
+Campbell's Soup,2,1,1
+Frozen Pizza,3,5,0
+Spicy Wings,2,0,1
+Fresh Baked Lasagna,1,1,1
+Warm Apple Pie,1,5,1
+Pre-made Slow Cooked Pot-Roast,2,2,1
+Frozen Chicken,-2,-2,0
