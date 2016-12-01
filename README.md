@@ -34,4 +34,4 @@ The entry point into the project is...
   # SEE how bagger automatically packs the groceries in the correct bag
 ```
 
-For a greater understanding of whats happening here read the post [here](http://www.automatingthefuture.com)
+For a greater understanding of whats happening here read the post [here](http://www.automatingthefuture.com/blog/2016/11/30/training-elixir-processes-to-learn-like-neurons)
