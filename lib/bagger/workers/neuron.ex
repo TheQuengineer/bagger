@@ -44,11 +44,11 @@ defmodule Bagger.Workers.Neuron do
     [item, input_data] = data
     target = List.last(input_data)
     inputs = List.delete_at(input_data, -1)
-
+    :sfmt.seed :os.timestamp
     Agent.update(__MODULE__, fn(map) ->
       Map.put(map, :inputs, inputs)
       |> Map.put(:weights, 1..length(inputs)
-      |> Enum.map(fn(_) -> :rand.uniform() end))
+      |> Enum.map(fn(_) -> :sfmt.uniform() end))
     end)
 
     calculate_output()
