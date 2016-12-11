@@ -11,14 +11,15 @@ defmodule Bagger.Mixfile do
   end
 
   def application do
-    [applications: [:logger, :exmatrix, :csvlixir],
+    [applications: [:logger, :exmatrix, :csvlixir, :sfmt],
      mod: {Bagger, []}]
   end
 
   defp deps do
     [
       {:csvlixir, "~> 2.0"},
-      {:exmatrix, "~> 0.0.1"}
+      {:exmatrix, "~> 0.0.1"},
+      {:sfmt, git: "https://github.com/jj1bdx/sfmt-erlang.git"}
     ]
   end
 end
