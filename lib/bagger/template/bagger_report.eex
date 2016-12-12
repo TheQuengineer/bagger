@@ -16,7 +16,7 @@
     td:hover {background-color: #858f91;}
     img { disply: inline-block; margin: 0 auto;}
     header { width: 100%; text-align: center;}
-    body { font-family: Copperplate,"Copperplate Gothic Light",fantasy; }
+    body { font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace; }
     h2 { text-align: center}
   </style>
 </head>
