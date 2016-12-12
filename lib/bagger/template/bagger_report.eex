@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Bagger's Report</title>
+  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+    header, section, footer, aside, nav, article, figure, audio, video, canvas{ display:block;}
+    table, th, td { width: 500px; margin: 0px auto; border: 2px solid #4d7177; overflow-x: auto; }
+    th { height: 50px; text-align: center; background-color: lightgrey;}
+    td { height: 50px; vertical-align: bottom; text-align: center;}
+    tr:hover {background-color: #858f91;}
+    td:hover {background-color: #858f91;}
+    img { disply: inline-block; margin: 0 auto;}
+    header { width: 100%; text-align: center;}
+    body { font-family: Copperplate,"Copperplate Gothic Light",fantasy; }
+    h2 { text-align: center}
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <img align="center" src="lib/bagger/template/paper-bag.jpg" alt="Animated Paperbag", height="180" width="180">
+      <h2>Bagger Report</h2>
+    </header>
+    <section id="content">
+    <table align="center">
+      <center>
+      <h2> Bagging For Grocery List has Completed.</h2>
+        <tr>
+          <th>STORE ITEM</th>
+          <th>BAG CLASSIFICATION</th>
+        </tr>
+      <%= for item <- hot_items do %>
+        <tr>
+          <td><%= item %></td>
+          <td bgcolor="#FA4A05">Hot</td>
+        </tr>
+      <% end%>
+      <%= for item <- cold_items do %>
+        <tr>
+          <td><%= item %></td>
+          <td bgcolor="#05A8FA">Cold</td>
+        </tr>
+      <% end%>
+      </center>
+     </table>
+    </section>
+  </div>
+</body>
+</center>
+</html>
