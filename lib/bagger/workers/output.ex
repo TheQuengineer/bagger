@@ -56,10 +56,8 @@ defmodule Bagger.Workers.Output do
   end
 
   def handle_call(:show, _from, state) do
-    hot = Keyword.fetch!(state, :hot_bag)
-    cold = Keyword.fetch!(state, :cold_bag)
-    display_hot_message(hot)
-    display_cold_message(cold)
+    make_report(state)
+    System.cmd("open", ["bagger_report.html"])
     {:reply, "Bagging Completed.", state}
   end
 
@@ -73,15 +71,12 @@ defmodule Bagger.Workers.Output do
     {:noreply, result}
   end
 
-  defp display_hot_message(list) do
-    IO.puts("----- HOT BAG ------")
-    Enum.map(list, &IO.inspect(&1))
-    IO.puts("--------------------")
-  end
-
-  defp display_cold_message(list) do
-    IO.puts("----- COLD BAG -----")
-    Enum.map(list, &IO.inspect(&1))
-    IO.puts("--------------------")
+  defp make_report(state) do
+    contents = EEx.eval_file("lib/bagger/template/bagger_report.eex",
+      [
+        hot_items: Keyword.fetch!(state, :hot_bag),
+        cold_items: Keyword.fetch!(state, :cold_bag)
+      ])
+    File.write!("bagger_report.html", contents, [:write])
   end
 end
